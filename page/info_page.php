@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 require('../database/get_post.php');
 require('../database/get_saran.php');
 

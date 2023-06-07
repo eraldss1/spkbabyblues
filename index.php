@@ -18,34 +18,31 @@
 </head>
 
 <body>
-  <header>
-    <div class="navbar">
-      <div class="navbar-title">
-        Baby Blues Syndrome Check
-      </div>
+  <div class="navbar">
+    <div class="navbar-title">
+      Baby Blues Syndrome Check
     </div>
-  </header>
+  </div>
 
-  <main>
+  <div class="wrapper">
     <div class="jumbotron">
       <div class="jumbotron-left">
         <h1>Baby Blues Syndrome</h1>
         <p>Kondisi gangguan emosional atau mood yang umum dialami oleh ibu setelah melahirkan. Kondisi ini menyebabkan
           ibu lebih emosional dan sensitif, seperti mudah sedih, cemas, lelah, lekas marah, sering menangis, sulit
           tidur, dan lainnya.</p>
-
         <a href="page/info_page.php" type="button" class="jumbotron-btn">Info</a>
         <a href="page/check_page.php" type="button" class="jumbotron-btn">Check Now</a>
-
       </div>
 
       <div class="jumbotron-right">
         <img src="img/mom.png" />
       </div>
     </div>
+  </div>
 
 
-  </main>
+
 </body>
 
 </html>

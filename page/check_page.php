@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+require('../database/get_gejala.php');
+
+$gejalas = getGejala();
+$_SESSION['list_gejala'] = $gejalas;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,19 +22,35 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
         crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="../css/check.css?v=<?php echo time(); ?>">
 
 </head>
 
 <body>
-    <header>
-        <div class="navbar">
-            <div class="navbar-title">
-                Baby Blues Syndrome Check
-            </div>
+    <div class="navbar">
+        <div class="navbar-title">
+            Baby Blues Syndrome Check
         </div>
-    </header>
-    <main>
-        <h1>halaman 2</h1>
-    </main>
+    </div>
+
+    <div class="check_wrapper">
+        <h2>Pertanyaan Tentang Gejala</h2>
+        <hr>
+        <form method="post" action="../algoritma/cbr.php">
+            <?php
+            foreach ($gejalas as $g) {
+                echo '<label><input type="checkbox" name="gejala[]" value="' . get_object_vars($g)['kode_gejala'] . '">' . get_object_vars($g)['nama_gejala'] . '</label><br>';
+            }
+
+            ?>
+            <button type="submit" name="submit" value="Submit">
+                Submit
+            </button>
+
+            <br>
+            <br>
+        </form>
+    </div>
+
 </body>
