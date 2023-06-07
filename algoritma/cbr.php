@@ -4,33 +4,34 @@ session_start();
 // STEP 1
 // Proses Retrieve yaitu tahapan mengenali masalah kasus baru dengan kasus yang sudah ada
 // Proses ini dilakukan pada submit form page sebelumnya
+function CBR($userInput)
+{
+    $listNilaiCF = $_SESSION['list_gejala'];
 
-if (isset($_POST['submit'])) {
-    if (isset($_POST['gejala']) && is_array($_POST['gejala'])) {
-        $listNilaiCF = $_SESSION['list_gejala'];
+    // STEP 2
+    // Untuk mencari nilai kemiripan diberikan keyakinan yang masing-masing memiliki nilai. 
+    // Jika memiliki kecocokan diberikan nilai true, dan jika tidak memiliki kecocokan maka
+    // diberikan nilai false.
+    $gejala = findSimiliarity($userInput);
 
-        // STEP 2
-        // Untuk mencari nilai kemiripan diberikan keyakinan yang masing-masing memiliki nilai. 
-        // Jika memiliki kecocokan diberikan nilai true, dan jika tidak memiliki kecocokan maka
-        // diberikan nilai false.
-        $gejala = findSimiliarity($_POST['gejala']);
+    // STEP 3
+    //  Menghitung nilai kemiripan kasus lama dengan kasus baru, dengan rumus Similarity
 
-        // STEP 3
-        //  Menghitung nilai kemiripan kasus lama dengan kasus baru, dengan rumus Similarity
+    // Penyakit dengan kode gejalanya
+    $P1 = [1, 2, 3, 4, 9];
+    $P2 = [10, 11, 12];
+    $P3 = [13, 14, 15];
 
-        // Penyakit dengan kode gejalanya
-        $P1 = [1, 2, 3, 4, 9];
-        $P2 = [10, 11, 12];
-        $P3 = [13, 14, 15];
+    $SIMILIARITY_1 = getSimiliarity($gejala, $P1, $listNilaiCF);
+    $SIMILIARITY_2 = getSimiliarity($gejala, $P2, $listNilaiCF);
+    $SIMILIARITY_3 = getSimiliarity($gejala, $P3, $listNilaiCF);
 
-        $SIMILIARITY_1 = getSimiliarity($gejala, $P1, $listNilaiCF);
-        $SIMILIARITY_2 = getSimiliarity($gejala, $P2, $listNilaiCF);
-        $SIMILIARITY_3 = getSimiliarity($gejala, $P3, $listNilaiCF);
-
-        echo '<p>P1: ', ($SIMILIARITY_1), '%</p>';
-        echo '<p>P2: ', ($SIMILIARITY_2), '%</p>';
-        echo '<p>P3: ', ($SIMILIARITY_3), '%</p>';
-
+    if ($SIMILIARITY_1 > $SIMILIARITY_2 && $SIMILIARITY_1 > $SIMILIARITY_3) {
+        return 1;
+    } else if ($SIMILIARITY_2 > $SIMILIARITY_1 && $SIMILIARITY_2 > $SIMILIARITY_3) {
+        return 2;
+    } else {
+        return 3;
     }
 }
 
@@ -71,4 +72,3 @@ function checkValueInArray($value, $array)
         return false;
     }
 }
-?>
