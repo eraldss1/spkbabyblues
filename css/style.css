@@ -1,8 +1,3 @@
-/* { 
-    font-family: 'Inter';
-    font-style: normal;
-/* }   / */
-
 body {
   background: #fad5c5;
 }
@@ -22,10 +17,6 @@ body {
   color: #000;
   text-align: center;
   margin: 16;
-}
-
-main {
-  margin: 20px 10px;
 }
 
 .jumbotron {
@@ -79,18 +70,12 @@ main {
 .section-card {
   margin: 30px auto;
   width: 80%;
-
-  /* display: grid;
-    grid-template-columns: repeat(3, 1ft);
-    column-gap: 48px;
-    width: 80%;
-    margin: 60px auto;
-    background-color: rebeccapurple; */
 }
 
 .section-card .card-cont {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   gap: 24px;
 }
 
@@ -134,13 +119,6 @@ main {
   padding: 10px;
 }
 
-/* .card__img{
-    width:150px;
-    display: block;
-    margin: 2s0px;
-    padding: 5px;
-} */
-
 .card__details {
   padding: 10px 0;
   margin: 30px;
@@ -167,8 +145,8 @@ main {
   border-radius: 100px;
 }
 
-.card-1 .btn {
-  background-color: #a87c7c;
+.card .btn {
+  background-color: #a87c7c !important;
 }
 
 .card-2 .btn {
@@ -256,6 +234,8 @@ main {
 .btn_wrapper {
   display: flex;
   justify-content: center;
+
+  margin-bottom: 20px;
 }
 
 .popup__btn {
@@ -351,6 +331,8 @@ main {
   text-align: center;
   text-decoration: none;
   letter-spacing: 1px;
+
+  margin-bottom: 20px !important;
 }
 
 .jumbotron-btn2set:hover {
@@ -370,86 +352,3 @@ main {
   background-color: white;
   outline: 2px solid #a87c7c;
 }
-
-/*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
-    outline: none;
-    border: none;
-    text-decoration: none;
-    text-transform: capitalize;
-    transition: .2s linear;
-    
-}
-
-:root{
-    --main-color: #d3ad7f;
-    --black: #13131a;
-    --bg: #010103;
-    --border: .1rem solid rgba(255,255,255,.3);
-}
-
-html{
-    font-size: 62.5%;
-    overflow-x: hidden;
-    scroll-padding-top: 9rem;
-    scroll-behavior: smooth;
-}
-
-html::-webkit-scrollbar{
-    width: .8rem;
-}
-
-html::-webkit-scrollbar-track{
-    background: transparent;
-}
-
-html::-webkit-scrollbar-thumb{
-    background: #fff;
-    border-radius: 5rem;
-}
-
-body{
-    background: var(--bg);
-}
-
-.header{
-    background: var(--bg);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1.5rem 7%;
-    border-bottom: var(--border);
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 1000;
-
-
-}
-/*
-
-body{
-    height: 100vh;
-    background-color: #fff;
-    background-image: url('bg.png');
-    background-size: cover;
-    background-position: center;
-}
-
-.navbarr{
-  text-align: center;
-    /*flex: 1;
-    width: 100%;
-    height: 60px;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between; 
-}
-
-@media (max-width:992px){
-    .navbar
-}*/
