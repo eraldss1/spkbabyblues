@@ -371,12 +371,16 @@ body {
   width: 100%;
 }
 
+.halakhir-section > .container {
+  margin-top: 28px;
+}
+
 .halakhir-section .img-cont {
   align-self: center;
   display: flex;
   flex: 4;
   width: 100%;
-  max-height: 400px;
+  max-height: 500px;
 }
 .halakhir-section .img-cont img {
   max-height: 100%;
@@ -387,12 +391,27 @@ body {
   width: 100%;
   flex: 8;
 }
-.halakhir-section .text-cont h2 {
-  font-size: 48px;
-  margin-bottom: 24px;
+
+.halakhir-section .text-cont .result-text-cont {
+  margin-bottom: 36px;
 }
-.halakhir-section .text-cont p {
-  font-size: 22px;
+
+.halakhir-section .text-cont .result-text-cont .text-title {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+.halakhir-section .text-cont .result-text-cont .text-value {
+  font-size: 48px;
+  font-weight: 300;
+}
+
+.halakhir-section .text-cont .solution-text-cont .text-title {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+.halakhir-section .text-cont .solution-text-cont ol {
+  font-size: 20px;
+  font-weight: 300;
 }
 
 .btn-cont-center {
