@@ -372,15 +372,7 @@ body {
 }
 
 .halakhir-section .img-cont {
-  align-self: center;
-  display: flex;
-  flex: 4;
-  width: 100%;
-  max-height: 400px;
-}
-.halakhir-section .img-cont img {
-  max-height: 100%;
-  object-fit: contain;
+  width: 400px!important;
 }
 
 .halakhir-section .text-cont {

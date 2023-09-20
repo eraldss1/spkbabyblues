@@ -8,10 +8,13 @@ if (isset($_POST['submit'])) {
 
         if ($result == 1) {
             $saran = $_SESSION['list_saran_tingkat_1'];
+            $path_gambar = "../img/babyblues1.png";
         } else if ($result == 2) {
             $saran = $_SESSION['list_saran_tingkat_2'];
+            $path_gambar = "../img/babyblues2.png";
         } else if ($result == 3) {
             $saran = $_SESSION['list_saran_tingkat_3'];
+            $path_gambar = "../img/babyblues3.png";
         }
     }
 }
@@ -43,8 +46,12 @@ if (isset($_POST['submit'])) {
     <section class="halakhir-section">
         <div class="container flex flex-wrap">
             <div class="img-cont">
-                <img src="../img/babyblues1.png" alt="ting1">
+                <img src=<?php echo $path_gambar ?> alt="ting1">
             </div>
+            <!-- <div>
+                <img width="400px" src=<?php echo $path_gambar ?> alt="ting1">
+            </div> -->
+
             <div class="text-cont">
                 <div class="result-text-cont">
                     <h2>
