@@ -54,17 +54,17 @@ if (isset($_POST['submit'])) {
 
             <div class="text-cont">
                 <div class="result-text-cont">
-                    <h2>
+                    <h2 class="text-title">
                         Hasil Diagnosis
                     </h2>
+                    <p class="text-value"><?php echo $penyakit ?></p>
                 </div>
                 <div class="solution-text-cont">
-                    <h3><?php echo $penyakit ?></h3>
-                    <p>Solusi</p>
-                    <ol class>
+                    <h2 class="text-title">Solusi</h2>
+                    <ol>
                         <?php
                         foreach ($saran as $s) {
-                            echo '<li><p>' . $s . '</p></li>';
+                            echo '<li><p class="text-value">' . $s . '</p></li>';
                         }
                         ?>
                     </ol>

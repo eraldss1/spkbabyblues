@@ -371,6 +371,10 @@ body {
   width: 100%;
 }
 
+.halakhir-section > .container {
+  margin-top: 28px;
+}
+
 .halakhir-section .img-cont {
   width: 400px!important;
 }
@@ -379,12 +383,27 @@ body {
   width: 100%;
   flex: 8;
 }
-.halakhir-section .text-cont h2 {
-  font-size: 48px;
-  margin-bottom: 24px;
+
+.halakhir-section .text-cont .result-text-cont {
+  margin-bottom: 36px;
 }
-.halakhir-section .text-cont p {
-  font-size: 22px;
+
+.halakhir-section .text-cont .result-text-cont .text-title {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+.halakhir-section .text-cont .result-text-cont .text-value {
+  font-size: 48px;
+  font-weight: 300;
+}
+
+.halakhir-section .text-cont .solution-text-cont .text-title {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+.halakhir-section .text-cont .solution-text-cont ol {
+  font-size: 20px;
+  font-weight: 300;
 }
 
 .btn-cont-center {
