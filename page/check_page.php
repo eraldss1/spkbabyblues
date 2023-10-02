@@ -1,6 +1,6 @@
 <?php
 session_start();
-$gejalas = $_SESSION['list_gejala']; 
+$gejalas = $_SESSION['list_gejala'];
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +30,7 @@ $gejalas = $_SESSION['list_gejala'];
     <div class="check_wrapper">
         <h2>Pertanyaan Tentang Gejala</h2>
         <hr>
-        <form method="post" action="./result_page.php">
+        <form method="post" action="./result_page.php" onsubmit="return validateChecked()">
             <?php
             foreach ($gejalas as $g) {
                 echo '<label><input type="checkbox" name="gejala[]" value="' . get_object_vars($g)['kode_gejala'] . '">' . get_object_vars($g)['nama_gejala'] . '</label><br>';
@@ -45,5 +45,26 @@ $gejalas = $_SESSION['list_gejala'];
             <br>
         </form>
     </div>
+
+    <script>
+        function validateChecked() {
+            let cb = document.getElementsByName("gejala[]");
+            let pass = false;
+
+            for (let i = 0; i < cb.length; i++) {
+                if (cb[i].checked === true) {
+                    pass = true;
+                    break;
+                }
+            }
+
+            if (pass) {
+                return true;
+            } else {
+                alert("Pilih gejala terlebih dahulu.");
+                return false;
+            }
+        }
+    </script>
 
 </body>
